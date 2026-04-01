@@ -113,13 +113,6 @@ body {
     color: var(--brand-orange);
 }
 
-.hamburger {
-    display: none;
-    font-size: 26px;
-    color: var(--dark-text);
-    cursor: pointer;
-}
-
 /* Hero Section */
 .info-hero {
     background: linear-gradient(rgba(253, 240, 236, 0.8), rgba(253, 240, 236, 0.8)), url('hero1.png');
@@ -540,7 +533,6 @@ body {
 
 .footer-col ul li a:hover {
     color: var(--brand-orange);
-    
 }
 
 .contact-col p {
@@ -729,38 +721,4 @@ body {
     .social-icons {
         justify-content: center;
     }
-
-    .hamburger {
-        display: block;
-        text-align: left;
-        padding: 10px 20px;
-        width: 100%;
-    }
-
-    #nav-links {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background-color: #ffffff;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-    }
-
-    #nav-links.nav-active {
-        max-height: 400px;
-    }
-
-    #nav-links li {
-        width: 100%;
-        border-bottom: 1px solid var(--light-gray);
-    }
-
-    .top-nav a {
-        display: block;
-        padding: 15px 20px;
-        text-align: left;
-    }
 }
-

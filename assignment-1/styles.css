@@ -1,4 +1,3 @@
-/* CSS Variables */
 :root {
     --brand-orange: #E85624;
     --brand-light-orange: #FDF0EC;
@@ -7,7 +6,6 @@
     --border-color: #e0e0e0;
 }
 
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +18,6 @@ body {
     color: #000000;
 }
 
-/* Header */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -44,7 +41,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    width: 400px; 
     gap: 15px;
 }
 
@@ -53,15 +50,15 @@ body {
     font-size: 30px;
     color: var(--dark-text);
     line-height: 0.8;
-    margin-bottom: 5px;
+    margin-bottom: 5px; 
 }
 
 .brand-title-en {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 18px; 
     font-weight: 600;
     color: var(--dark-text);
-    letter-spacing: 4px;
+    letter-spacing: 4px; 
     text-transform: uppercase;
 }
 
@@ -93,7 +90,6 @@ body {
     list-style: none;
     display: inline-flex;
     gap: 40px;
-    flex-wrap: nowrap;
 }
 
 .top-nav a {
@@ -105,22 +101,11 @@ body {
     transition: color 0.3s;
 }
 
-.top-nav a:hover {
-    color: var(--brand-orange);
-}
-
+.top-nav a:hover,
 .top-nav a.highlight {
     color: var(--brand-orange);
 }
 
-.hamburger {
-    display: none;
-    font-size: 26px;
-    color: var(--dark-text);
-    cursor: pointer;
-}
-
-/* Hero Section */
 .info-hero {
     background: linear-gradient(rgba(253, 240, 236, 0.8), rgba(253, 240, 236, 0.8)), url('hero1.png');
     background-size: cover;
@@ -132,13 +117,13 @@ body {
 }
 
 .info-hero h1 {
-    font-family: 'Noto Nastaliq Urdu', serif;
+    font-family: 'Noto Nastaliq Urdu', serif; 
     font-size: 55px;
     color: var(--brand-orange);
     margin-bottom: 30px;
     font-weight: 700;
     line-height: 1.4;
-    text-align: right;
+    text-align: right; 
     text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
 }
 
@@ -146,13 +131,12 @@ body {
     font-size: 20px;
     color: var(--dark-text);
     max-width: 600px;
-    margin: 0 0 30px 0;
+    margin: 0 0 30px 0; 
     line-height: 1.6;
     text-align: left;
     font-weight: 500;
 }
 
-/* Buttons */
 .btn-primary {
     align-self: flex-start;
     background-color: var(--brand-orange);
@@ -171,29 +155,12 @@ body {
     transform: scale(1.05);
 }
 
-.btn-dark {
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    padding: 15px 45px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s;
-}
-
-.btn-dark:hover {
-    background-color: var(--brand-orange);
-}
-
-/* Carousel Section */
 .carousel-section {
     position: relative;
     width: 100%;
     height: 650px;
     background-color: #ffffff;
+    padding-bottom: 50px; 
     overflow: hidden;
 }
 
@@ -201,9 +168,9 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; 
     padding: 0 10%;
     gap: 20px;
     align-items: center;
@@ -211,7 +178,7 @@ body {
 }
 
 .carousel-wrapper::-webkit-scrollbar {
-    display: none;
+    display: none; 
 }
 
 .carousel-slide {
@@ -223,7 +190,7 @@ body {
     scroll-snap-align: center;
     background-size: cover;
     background-position: center bottom;
-    border-radius: 4px;
+    border-radius: 4px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
@@ -254,7 +221,21 @@ body {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Products Section */
+.btn-dark {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 15px 45px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.btn-dark:hover { background-color: var(--brand-orange); }
+
 .products-section {
     padding: 80px 5%;
     max-width: 1400px;
@@ -271,8 +252,7 @@ body {
 
 .product-grid {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
 
@@ -347,7 +327,6 @@ body {
     color: #ffffff;
 }
 
-/* Testimonials Section */
 .testimonials-section {
     padding: 80px 5%;
     background-color: #f9f9f9;
@@ -363,8 +342,7 @@ body {
 
 .testimonials-grid {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
@@ -405,7 +383,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Newsletter Section */
 .newsletter-section {
     background-color: #4a4a4a;
     color: #ffffff;
@@ -435,7 +412,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-wrap: nowrap;
 }
 
 .newsletter-form input {
@@ -479,7 +455,6 @@ body {
     color: var(--brand-orange);
 }
 
-/* Footer */
 .site-footer {
     background-color: #000000;
     color: #eaeaea;
@@ -489,8 +464,7 @@ body {
 
 .footer-container {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
@@ -540,7 +514,6 @@ body {
 
 .footer-col ul li a:hover {
     color: var(--brand-orange);
-    
 }
 
 .contact-col p {
@@ -589,178 +562,3 @@ body {
     font-size: 12px;
     letter-spacing: 1px;
 }
-
-/* Media Queries */
-@media (max-width: 1024px) {
-    .main-header {
-        padding: 15px 20px;
-    }
-    .logo-container, .header-icons {
-        width: auto;
-        flex: 1;
-    }
-    .brand-title-container {
-        width: auto;
-        flex: 2;
-        padding: 0 10px;
-    }
-
-    .top-nav ul {
-        flex-wrap: wrap;
-        gap: 15px 25px;
-        justify-content: center;
-    }
-
-    .product-grid,
-    .testimonials-grid,
-    .footer-container {
-        grid-auto-flow: row;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .footer-col ul li a,
-    .contact-col p {
-        white-space: normal;
-        word-break: break-word;
-    }
-}
-
-@media (max-width: 992px) {
-    .main-header {
-        padding: 15px 20px;
-    }
-
-    .product-grid,
-    .testimonials-grid,
-    .footer-container {
-        grid-auto-flow: row;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .carousel-content h2 {
-        font-size: 40px;
-    }
-    .carousel-content p {
-        font-size: 18px;
-    }
-    .carousel-slide {
-        flex: 0 0 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .logo-container, .brand-title-container, .header-icons {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-    }
-    .brand-title-ur { font-size: 24px; }
-    .brand-title-en { font-size: 14px; }
-
-    .top-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px 25px;
-        padding: 0 10px;
-    }
-
-    .info-hero {
-        padding: 60px 20px;
-    }
-    .info-hero h1 {
-        font-size: 35px;
-        text-align: center;
-    }
-    .info-hero p {
-        font-size: 16px;
-        text-align: center;
-    }
-    .btn-primary {
-        align-self: center;
-        width: 100%;
-        text-align: center;
-    }
-
-    .carousel-section {
-        height: 500px;
-    }
-    .carousel-slide {
-        flex: 0 0 95%;
-    }
-    .carousel-content h2 {
-        font-size: 30px;
-        letter-spacing: 1px;
-    }
-    .carousel-content p {
-        font-size: 16px;
-    }
-    .btn-dark {
-        padding: 12px 25px;
-        font-size: 14px;
-    }
-
-    .product-grid,
-    .testimonials-grid,
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .newsletter-form {
-        flex-wrap: wrap;
-    }
-    .newsletter-form input,
-    .btn-subscribe {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-    .contact-col p {
-        justify-content: center;
-    }
-    .social-icons {
-        justify-content: center;
-    }
-
-    .hamburger {
-        display: block;
-        text-align: left;
-        padding: 10px 20px;
-        width: 100%;
-    }
-
-    #nav-links {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background-color: #ffffff;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-    }
-
-    #nav-links.nav-active {
-        max-height: 400px;
-    }
-
-    #nav-links li {
-        width: 100%;
-        border-bottom: 1px solid var(--light-gray);
-    }
-
-    .top-nav a {
-        display: block;
-        padding: 15px 20px;
-        text-align: left;
-    }
-}
-
