@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libas-e-Ikhlaq | Men's Clothing</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js" defer></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,9 +56,7 @@
     </section>
 
     <section class="carousel-section">
-        
         <div class="carousel-wrapper" id="heroCarousel">
-            
             <div class="carousel-slide slide-1">
                 <div class="carousel-content">
                     <h2>WINTER CLEARANCE SALE</h2>
@@ -63,7 +64,6 @@
                     <button class="btn-dark">Shop The Sale</button>
                 </div>
             </div>
-
             <div class="carousel-slide slide-2">
                 <div class="carousel-content dark-text-content">
                     <h2>THE SPRING / SUMMER '26 EDIT</h2>
@@ -71,7 +71,6 @@
                     <button class="btn-dark">Explore New Arrivals</button>
                 </div>
             </div>
-
             <div class="carousel-slide slide-3">
                 <div class="carousel-content">
                     <h2>MASTER THE ART OF BESPOKE</h2>
@@ -79,7 +78,6 @@
                     <button class="btn-dark">Shop Unstitched</button>
                 </div>
             </div>
-
             <div class="carousel-slide slide-4">
                 <div class="carousel-content">
                     <h2>LEAVE A LASTING IMPRESSION</h2>
@@ -87,93 +85,35 @@
                     <button class="btn-dark">Discover Fragrances</button>
                 </div>
             </div>
-
         </div>
-
-
     </section>
 
     <section class="products-section">
-        <h2>LATEST ARRIVALS</h2>
-        
-        <div class="product-grid">
-            
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="White.jpg" alt="Premium Unstitched" class="product-image">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Premium Egyptian Cotton</h3>
-                    <p class="product-price">Rs. 4,500</p>
-                    <button class="add-to-cart-btn">
-                        <i class="fa-solid fa-cart-shopping"></i> Add to Cart
-                    </button>
-                </div>
+        <h2>FEATURED DEALS</h2> 
+        <div class="product-grid" id="dynamic-products">
             </div>
-
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="Green.jpg" alt="Wash and Wear" class="product-image">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Classic Wash & Wear</h3>
-                    <p class="product-price">Rs. 3,200</p>
-                    <button class="add-to-cart-btn">
-                        <i class="fa-solid fa-cart-shopping"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="oud.jpg" alt="Signature Fragrance" class="product-image">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Oud E Khaas Fragrance</h3>
-                    <p class="product-price">Rs. 5,000</p>
-                    <button class="add-to-cart-btn">
-                        <i class="fa-solid fa-cart-shopping"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-
-        </div>
     </section>
+
     <section class="testimonials-section">
         <h2>WHAT OUR CLIENTS SAY</h2>
-        
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
                 <p class="quote">"The premium Egyptian cotton is exactly as described. The fabric feels incredibly soft and drapes perfectly after tailoring. Highly recommended."</p>
                 <p class="customer-name">- Ahmed R.</p>
             </div>
-
             <div class="testimonial-card">
                 <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
                 <p class="quote">"I ordered the wash-and-wear unstitched fabric for daily office use. The quality is outstanding and the delivery was very prompt."</p>
                 <p class="customer-name">- Salman T.</p>
             </div>
-
             <div class="testimonial-card">
                 <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
                 </div>
                 <p class="quote">"Oud E Khaas has become my new signature scent. It lasts all day and has a very rich, traditional profile without being overpowering."</p>
                 <p class="customer-name">- Usman K.</p>
@@ -185,21 +125,19 @@
         <div class="newsletter-content">
             <h2>JOIN THE CLUB</h2>
             <p>Subscribe to our newsletter to receive exclusive offers, early access to new collections, and 10% off your first unstitched order.</p>
-            
             <form class="newsletter-form" action="#" method="POST">
                 <input type="email" placeholder="Enter your email address" required>
                 <button type="submit" class="btn-subscribe">Subscribe</button>
             </form>
         </div>
     </section>
+
     <footer class="site-footer">
         <div class="footer-container">
-            
             <div class="footer-col brand-col">
                 <h3 class="footer-logo">LIBAS-E-IKHLAQ</h3>
                 <p>Elevating everyday style with premium unstitched fabrics, signature fragrances, and curated accessories for the modern gentleman.</p>
             </div>
-
             <div class="footer-col links-col">
                 <h4>Quick Links</h4>
                 <ul>
@@ -209,7 +147,6 @@
                     <li><a href="#">Fragrances</a></li>
                 </ul>
             </div>
-
             <div class="footer-col support-col">
                 <h4>Customer Care</h4>
                 <ul>
@@ -219,26 +156,30 @@
                     <li><a href="#">FAQs</a></li>
                 </ul>
             </div>
-
             <div class="footer-col contact-col">
                 <h4>Get In Touch</h4>
                 <p><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan</p>
                 <p><i class="fa-solid fa-envelope"></i> support@libaseikhlaq.com</p>
                 <p><i class="fa-solid fa-phone"></i> +92 300 1234567</p>
-                
                 <div class="social-icons">
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 Libas-e-Ikhlaq. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body" id="modal-body-content">
+                </div>
+        </div>
+    </div>
 
 </body>
 </html>
