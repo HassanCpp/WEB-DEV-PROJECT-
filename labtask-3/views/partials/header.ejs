@@ -1,0 +1,22 @@
+<header class="main-header">
+    <div class="logo-container">
+        <img src="/logo.png" alt="Libas e ikhlaq Logo" class="brand-logo">
+    </div>
+    <div class="brand-title-container">
+        <div class="brand-title-ur" dir="rtl">لباس اخلاق</div>
+        <div class="brand-title-en">LIBAS-E-IKHLAQ</div>
+    </div>
+    <div class="header-icons">
+    <i class="fa-solid fa-magnifying-glass" title="Search"></i>
+    <i class="fa-regular fa-heart" title="Wishlist"></i>
+    
+    <% if (currentUser) { %>
+        <span style="font-size: 12px; font-weight: bold; margin: 0 10px;">Hi, <%= currentUser.name.split(' ')[0] %>!</span>
+        <a href="/logout" style="color: inherit;"><i class="fa-solid fa-arrow-right-from-bracket" title="Logout"></i></a>
+    <% } else { %>
+        <a href="/login" style="color: inherit;"><i class="fa-regular fa-user" title="Login/Register"></i></a>
+    <% } %>
+
+    <i class="fa-solid fa-bag-shopping" title="Cart"></i>
+</div>
+</header>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Libas-e-Ikhlaq</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="/logo.png" alt="Libas e ikhlaq Logo" class="brand-logo">
+        </div>
+        
+        <div class="brand-title-container">
+            <div class="brand-title-ur" dir="rtl">لباس اخلاق</div>
+            <div class="brand-title-en">LIBAS-E-IKHLAQ</div>
+        </div>
+
+        <div class="header-icons">
+       <i class="fa-solid fa-magnifying-glass" title="Search"></i>
+       <i class="fa-regular fa-heart" title="Wishlist"></i>
+    
+      <% if (currentUser) { %>
+        <span style="font-size: 12px; font-weight: bold; margin: 0 10px;">Hi, <%= currentUser.name.split(' ')[0] %>!</span>
+        <a href="/logout" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-arrow-right-from-bracket" title="Logout"></i></a>
+      <% } else { %>
+        <a href="/login" style="color: inherit; text-decoration: none;"><i class="fa-regular fa-user" title="Login/Register"></i></a>
+      <% } %>
+
+     <i class="fa-solid fa-bag-shopping" title="Cart"></i>
+     </div>
+    </header>
+
+    <nav class="top-nav">
+        <div class="hamburger" id="hamburger-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <ul id="nav-links">
+            <li><a href="/">HOME</a></li>
+            <li><a href="#">UNSTITCHED</a></li>
+            <li><a href="#">KURTA PAJAMA</a></li>
+            <li><a href="#">WAISTCOATS</a></li>
+            <li><a href="#">FRAGRANCE</a></li>
+            <li><a href="/contact-us" class="highlight">CONTACT US</a></li>
+        </ul>
+    </nav>
+
+    <section class="info-hero" style="padding: 60px 50px;">
+        <h1 style="text-align: center;">Contact Us</h1>
+        <p style="text-align: center;">Have questions? We'd love to hear from you. Reach out to us anytime!</p>
+    </section>
+
+    <section class="products-section">
+        <h2>Get In Touch</h2>
+        
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 18px; margin-bottom: 30px;">
+                <i class="fa-solid fa-envelope" style="color: var(--brand-orange);"></i><br>
+                <strong>Email:</strong> support@libaseikhlaq.com
+            </p>
+            <p style="font-size: 18px; margin-bottom: 30px;">
+                <i class="fa-solid fa-phone" style="color: var(--brand-orange);"></i><br>
+                <strong>Phone:</strong> +92 300 1234567
+            </p>
+            <p style="font-size: 18px;">
+                <i class="fa-solid fa-location-dot" style="color: var(--brand-orange);"></i><br>
+                <strong>Location:</strong> Lahore, Pakistan
+            </p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <h3 class="footer-logo">LIBAS-E-IKHLAQ</h3>
+                <p>Elevating everyday style with premium unstitched fabrics, signature fragrances, and curated accessories for the modern gentleman.</p>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Unstitched Fabrics</a></li>
+                    <li><a href="#">Waistcoats</a></li>
+                    <li><a href="#">Fragrances</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col support-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Get In Touch</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan</p>
+                <p><i class="fa-solid fa-envelope"></i> support@libaseikhlaq.com</p>
+                <p><i class="fa-solid fa-phone"></i> +92 300 1234567</p>
+                
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Libas-e-Ikhlaq. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
