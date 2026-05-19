@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <title>Sales Dashboard | Libas-e-Ikhlaq Admin</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="admin-bg">
+
+    <nav class="navbar navbar-expand-lg admin-navbar shadow-sm">
+        <div class="container-fluid px-4 align-items-center">
+            <a href="/admin" class="text-decoration-none d-flex align-items-center gap-3">
+                <img src="/logo.png" alt="Libas e ikhlaq Logo" class="admin-brand-logo">
+                <div class="d-flex flex-column align-items-center justify-content-center admin-brand-text-wrapper">
+                    <span dir="rtl" class="admin-brand-urdu">لباس اخلاق</span>
+                    <span class="admin-brand-english">
+                        LIBAS-E-IKHLAQ <span class="text-brand-accent">ADMIN</span>
+                    </span>
+                </div>
+            </a>
+
+            <div class="d-flex gap-4 align-items-center mt-2 mt-lg-0">
+                <span class="text-muted small fw-bold admin-greeting">
+                    Hi, <%= currentUser ? currentUser.name.split(' ')[0] : 'Admin' %>
+                </span>
+                <a href="/" class="btn btn-sm btn-outline-dark admin-header-btn" target="_blank">VIEW STORE</a>
+                <a href="/logout" class="admin-logout-icon" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom flex-wrap gap-3">
+            <h2 class="fw-light m-0 admin-page-title">Live Sales Dashboard</h2>
+            <a href="/admin" class="btn btn-outline-dark px-4 py-2 fw-bold shadow-sm admin-back-btn">
+                <i class="fa-solid fa-arrow-left me-2"></i> BACK TO INVENTORY
+            </a>
+        </div>
+        
+        <div class="row text-center mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="card admin-card border-0 shadow-sm py-5 h-100">
+                    <h5 class="text-muted mb-3 admin-card-subtitle">TOTAL REVENUE</h5>
+                    <h1 class="display-4 fw-bold text-revenue" id="revenue-display">
+                        PKR <%= stats.totalRevenue.toLocaleString() %>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card admin-card border-0 shadow-sm py-5 h-100">
+                    <h5 class="text-muted mb-3 admin-card-subtitle">TOTAL ORDERS</h5>
+                    <h1 class="display-4 fw-bold text-orders" id="orders-display">
+                        <%= stats.totalOrders %>
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="card admin-card border-0 shadow-sm mt-2 mb-5">
+            <div class="card-header bg-white py-3 border-bottom">
+                <h5 class="mb-0 fw-bold admin-table-title">RECENT TRANSACTIONS</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="ps-4">Order ID</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th class="text-end pe-4">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-orders-table">
+                            <% if (stats.recentOrders && stats.recentOrders.length > 0) { %>
+                                <% stats.recentOrders.forEach(order => { %>
+                                    <tr>
+                                        <td class="ps-4 text-muted font-monospace"><%= order._id.toString().substring(0, 8) %>...</td>
+                                        <td><%= new Date(order.createdAt).toLocaleDateString() %></td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1"><%= order.status %></span></td>
+                                        <td class="text-end pe-4 fw-bold text-dark">PKR <%= order.totalAmount.toLocaleString() %></td>
+                                    </tr>
+                                <% }) %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="4" class="text-center py-4 text-muted">No recent transactions found.</td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Ping the server API every 10 seconds (10000 ms)
+            setInterval(function() {
+                $.getJSON('/admin/api/sales-data', function(newData) {
+                    console.log("Fetched new data:", newData); 
+                    
+                    // 1. Update the top cards
+                    $('#revenue-display').text('PKR ' + newData.totalRevenue.toLocaleString());
+                    $('#orders-display').text(newData.totalOrders);
+
+                    // 2. Rebuild the Recent Transactions Table dynamically
+                    let tableHtml = '';
+                    if (newData.recentOrders && newData.recentOrders.length > 0) {
+                        newData.recentOrders.forEach(function(order) {
+                            let date = new Date(order.createdAt).toLocaleDateString();
+                            let shortId = order._id.toString().substring(0, 8) + '...';
+                            let amount = order.totalAmount.toLocaleString();
+                            let status = order.status || 'Completed';
+
+                            tableHtml += `
+                                <tr>
+                                    <td class="ps-4 text-muted font-monospace">${shortId}</td>
+                                    <td>${date}</td>
+                                    <td><span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">${status}</span></td>
+                                    <td class="text-end pe-4 fw-bold text-dark">PKR ${amount}</td>
+                                </tr>
+                            `;
+                        });
+                    } else {
+                        tableHtml = '<tr><td colspan="4" class="text-center py-4 text-muted">No recent transactions found.</td></tr>';
+                    }
+
+                    // 3. Inject the new rows into the DOM
+                    $('#recent-orders-table').html(tableHtml);
+                });
+            }, 10000); 
+        });
+    </script>
+</body>
+</html>
